@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest
 {
-    @Test
-    public void testGetIsSafe()
+    /*@Test
+    public void testGetSize()
     {
         Board testBoard = new Board(3, 3, "easy");
         assertTrue(testBoard.getSize() == 3);
@@ -19,5 +19,5 @@ public class BoardTest
     public void testSetSize()
     {
         //Board testBoard = new Board();
-    }
+    }*/
 }

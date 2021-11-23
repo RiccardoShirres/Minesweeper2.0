@@ -15,7 +15,7 @@ public class Board
 
     private int totalMines;
 
-    private ArrayList grid;
+    private ArrayList<Space> grid;
 
     private int gridSize;
 

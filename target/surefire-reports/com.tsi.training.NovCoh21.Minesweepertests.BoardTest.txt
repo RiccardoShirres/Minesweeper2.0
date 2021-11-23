@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.tsi.training.NovCoh21.Minesweepertests.BoardTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
