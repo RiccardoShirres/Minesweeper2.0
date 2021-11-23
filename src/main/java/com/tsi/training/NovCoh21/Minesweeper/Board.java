@@ -31,9 +31,9 @@ public class Board
 
         for (int i=0; i < gridSize; i+=size)
         {
-            for (int j=i; j < (i+size); j++)
+            for (int j=0; j < size; j++)
             {
-                Space currentSpace = new Space(i, j);
+                Space currentSpace = new Space(i/size, j);
                 grid.add(j, currentSpace);
             }
         }
@@ -78,21 +78,21 @@ public class Board
                 {
                     adjacentSpaces.add(currentSpace4);
                 }
-
             }
 
             for (Space adjSpace: adjacentSpaces)
             {
-                if (!adjSpace.getIsSafe()) {currentSpace3.setAdjacentMines(currentSpace3.getAdjacentMines()+1);}
+                if (!adjSpace.getIsSafe()) {currentSpace3.addToAdjacentMines();}
             }
-
         }
     }
 
     ///////////////////////Constructor//////////////////
 
-    public Board(int size)
+    public Board(int size, int totalMines, String difficulty)
     {
+        setDifficulty(difficulty);
+        setTotalMines(totalMines);
         createGrid(size);
     }
 

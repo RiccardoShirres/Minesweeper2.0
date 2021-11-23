@@ -39,5 +39,5 @@ public class Space
 
     public void setYCoordinate(int yCoordinate) {this.yCoordinate = yCoordinate;}
 
-    public void setAdjacentMines(int adjacentMines) {this.adjacentMines = adjacentMines;}
+    public void addToAdjacentMines() {this.adjacentMines++;}
 }

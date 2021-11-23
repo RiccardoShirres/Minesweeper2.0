@@ -31,9 +31,9 @@ public class Board
 
 <span class="fc bfc" id="L32" title="All 2 branches covered.">        for (int i=0; i &lt; gridSize; i+=size)</span>
         {
-<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (int j=i; j &lt; (i+size); j++)</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (int j=0; j &lt; size; j++)</span>
             {
-<span class="fc" id="L36">                Space currentSpace = new Space(i, j);</span>
+<span class="fc" id="L36">                Space currentSpace = new Space(i/size, j);</span>
 <span class="fc" id="L37">                grid.add(j, currentSpace);</span>
             }
         }
@@ -42,11 +42,11 @@ public class Board
 <span class="fc bfc" id="L42" title="All 2 branches covered.">        for (int k=0; k &lt; gridSize; k++)</span>
         {
 <span class="fc" id="L44">            Space currentSpace2 = grid.get(k);</span>
-<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            if (k &lt; getTotalMines())</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if (k &lt; getTotalMines())</span>
             {
-<span class="nc" id="L47">                Mine newMine = new Mine(currentSpace2.getXCoordinate(), currentSpace2.getYCoordinate());</span>
-<span class="nc" id="L48">                grid.set(k, newMine);</span>
-<span class="nc" id="L49">            }</span>
+<span class="fc" id="L47">                Mine newMine = new Mine(currentSpace2.getXCoordinate(), currentSpace2.getYCoordinate());</span>
+<span class="fc" id="L48">                grid.set(k, newMine);</span>
+<span class="fc" id="L49">            }</span>
             else {
 <span class="fc" id="L51">                Safe newSafe = new Safe(currentSpace2.getXCoordinate(), currentSpace2.getYCoordinate());</span>
 <span class="fc" id="L52">                grid.set(k, newSafe);</span>
@@ -64,7 +64,7 @@ public class Board
             {
 <span class="fc" id="L65">                int cS4xCoord = currentSpace4.getXCoordinate();</span>
 <span class="fc" id="L66">                int cS4yCoord = currentSpace4.getYCoordinate();</span>
-<span class="pc bpc" id="L67" title="18 of 32 branches missed.">                if</span>
+<span class="fc bfc" id="L67" title="All 32 branches covered.">                if</span>
                 (
                     cS4xCoord == cS3xCoord-1 &amp;&amp; cS4yCoord == cS3yCoord-1 ||
                     cS4xCoord == cS3xCoord-1 &amp;&amp; cS4yCoord == cS3yCoord ||
@@ -78,21 +78,21 @@ public class Board
                 {
 <span class="fc" id="L79">                    adjacentSpaces.add(currentSpace4);</span>
                 }
+<span class="fc" id="L81">            }</span>
 
-<span class="fc" id="L82">            }</span>
-
-<span class="fc bfc" id="L84" title="All 2 branches covered.">            for (Space adjSpace: adjacentSpaces)</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">            for (Space adjSpace: adjacentSpaces)</span>
             {
-<span class="pc bpc" id="L86" title="1 of 2 branches missed.">                if (!adjSpace.getIsSafe()) {currentSpace3.setAdjacentMines(currentSpace3.getAdjacentMines()+1);}</span>
-<span class="fc" id="L87">            }</span>
-
-<span class="fc" id="L89">        }</span>
-<span class="fc" id="L90">    }</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">                if (!adjSpace.getIsSafe()) {currentSpace3.addToAdjacentMines();}</span>
+<span class="fc" id="L86">            }</span>
+<span class="fc" id="L87">        }</span>
+<span class="fc" id="L88">    }</span>
 
     ///////////////////////Constructor//////////////////
 
-    public Board(int size)
-<span class="fc" id="L95">    {</span>
+    public Board(int size, int totalMines, String difficulty)
+<span class="fc" id="L93">    {</span>
+<span class="fc" id="L94">        setDifficulty(difficulty);</span>
+<span class="fc" id="L95">        setTotalMines(totalMines);</span>
 <span class="fc" id="L96">        createGrid(size);</span>
 <span class="fc" id="L97">    }</span>
 
@@ -100,7 +100,7 @@ public class Board
 
     public int getSize()
     {
-<span class="nc" id="L103">        return size;</span>
+<span class="fc" id="L103">        return size;</span>
     }
 
     public String getDifficulty()
@@ -134,12 +134,12 @@ public class Board
 
     public void setDifficulty(String difficulty)
     {
-<span class="nc" id="L137">        this.difficulty = difficulty;</span>
-<span class="nc" id="L138">    }</span>
+<span class="fc" id="L137">        this.difficulty = difficulty;</span>
+<span class="fc" id="L138">    }</span>
 
     public void setTotalMines(int totalMines)
     {
-<span class="nc" id="L142">        this.totalMines = totalMines;</span>
-<span class="nc" id="L143">    }</span>
+<span class="fc" id="L142">        this.totalMines = totalMines;</span>
+<span class="fc" id="L143">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

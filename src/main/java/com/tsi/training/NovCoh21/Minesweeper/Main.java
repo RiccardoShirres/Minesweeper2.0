@@ -9,39 +9,41 @@ public class Main
 
         Scanner readSize = new Scanner(System.in);
         System.out.println("What size square would you like your board to be? (enter an integer)");
-        Board game = new Board(readSize.nextInt());
+        int gameSize = readSize.nextInt();
 
         boolean difficultyNotSet = true;
+
+        int totalMines = 0;
+
+        String gameDifficulty;
 
         do
         {
             Scanner readDifficulty = new Scanner(System.in);
             System.out.println("What difficulty setting would you like? (easy/normal/hard)");
-            game.setDifficulty(readDifficulty.nextLine());
 
-            switch (game.getDifficulty()) {
+            gameDifficulty = readDifficulty.nextLine();
+
+            switch (gameDifficulty) {
                 case "easy", "Easy" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.getSize());
+                    totalMines = gameSize;
                 }
                 case "normal", "Normal" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.getSize() * 3);
+                    totalMines = gameSize*2;
                 }
                 case "hard", "Hard" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.getSize() * 4);
+                    totalMines = gameSize*3;
                 }
                 default -> System.out.println("Please enter easy, normal, or hard");
             }
         } while (difficultyNotSet);
 
-
-
-
-
+        Board game = new Board(gameSize, totalMines,gameDifficulty);
     }
 }

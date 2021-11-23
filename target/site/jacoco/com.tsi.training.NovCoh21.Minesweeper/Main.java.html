@@ -9,40 +9,42 @@ import java.util.Scanner;
 
 <span class="nc" id="L10">        Scanner readSize = new Scanner(System.in);</span>
 <span class="nc" id="L11">        System.out.println(&quot;What size square would you like your board to be? (enter an integer)&quot;);</span>
-<span class="nc" id="L12">        Board game = new Board(readSize.nextInt());</span>
+<span class="nc" id="L12">        int gameSize = readSize.nextInt();</span>
 
 <span class="nc" id="L14">        boolean difficultyNotSet = true;</span>
 
+<span class="nc" id="L16">        int totalMines = 0;</span>
+
+        String gameDifficulty;
+
         do
         {
-<span class="nc" id="L18">            Scanner readDifficulty = new Scanner(System.in);</span>
-<span class="nc" id="L19">            System.out.println(&quot;What difficulty setting would you like? (easy/normal/hard)&quot;);</span>
-<span class="nc" id="L20">            game.setDifficulty(readDifficulty.nextLine());</span>
+<span class="nc" id="L22">            Scanner readDifficulty = new Scanner(System.in);</span>
+<span class="nc" id="L23">            System.out.println(&quot;What difficulty setting would you like? (easy/normal/hard)&quot;);</span>
 
-<span class="nc bnc" id="L22" title="All 4 branches missed.">            switch (game.getDifficulty()) {</span>
+<span class="nc" id="L25">            gameDifficulty = readDifficulty.nextLine();</span>
+
+<span class="nc bnc" id="L27" title="All 4 branches missed.">            switch (gameDifficulty) {</span>
                 case &quot;easy&quot;, &quot;Easy&quot; -&gt;
                 {
-<span class="nc" id="L25">                    difficultyNotSet = false;</span>
-<span class="nc" id="L26">                    game.setTotalMines(game.getSize());</span>
-<span class="nc" id="L27">                }</span>
+<span class="nc" id="L30">                    difficultyNotSet = false;</span>
+<span class="nc" id="L31">                    totalMines = gameSize;</span>
+<span class="nc" id="L32">                }</span>
                 case &quot;normal&quot;, &quot;Normal&quot; -&gt;
                 {
-<span class="nc" id="L30">                    difficultyNotSet = false;</span>
-<span class="nc" id="L31">                    game.setTotalMines(game.getSize() * 3);</span>
-<span class="nc" id="L32">                }</span>
+<span class="nc" id="L35">                    difficultyNotSet = false;</span>
+<span class="nc" id="L36">                    totalMines = gameSize*2;</span>
+<span class="nc" id="L37">                }</span>
                 case &quot;hard&quot;, &quot;Hard&quot; -&gt;
                 {
-<span class="nc" id="L35">                    difficultyNotSet = false;</span>
-<span class="nc" id="L36">                    game.setTotalMines(game.getSize() * 4);</span>
-<span class="nc" id="L37">                }</span>
-<span class="nc" id="L38">                default -&gt; System.out.println(&quot;Please enter easy, normal, or hard&quot;);</span>
+<span class="nc" id="L40">                    difficultyNotSet = false;</span>
+<span class="nc" id="L41">                    totalMines = gameSize*3;</span>
+<span class="nc" id="L42">                }</span>
+<span class="nc" id="L43">                default -&gt; System.out.println(&quot;Please enter easy, normal, or hard&quot;);</span>
             }
-<span class="nc bnc" id="L40" title="All 2 branches missed.">        } while (difficultyNotSet);</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        } while (difficultyNotSet);</span>
 
-
-
-
-
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L47">        Board game = new Board(gameSize, totalMines,gameDifficulty);</span>
+<span class="nc" id="L48">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
