@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Player,3,0,0,0,1,0,1,0,1,0
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Board,24,32,0,2,10,9,7,3,7,2
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Main,79,0,8,0,22,0,7,0,2,0
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Space,3,0,0,0,1,0,1,0,1,0
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Safe,3,0,0,0,1,0,1,0,1,0
+Minesweeper2.0,com.tsi.training.NovCoh21.Minesweeper,Mine,3,0,0,0,1,0,1,0,1,0

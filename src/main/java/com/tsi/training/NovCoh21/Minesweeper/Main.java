@@ -19,30 +19,29 @@ public class Main
             System.out.println("What difficulty setting would you like? (easy/normal/hard)");
             game.setDifficulty(readDifficulty.nextLine());
 
-            switch (game.difficulty) {
+            switch (game.getDifficulty()) {
                 case "easy", "Easy" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.size);
+                    game.setTotalMines(game.getSize());
                 }
                 case "normal", "Normal" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.size * 3);
+                    game.setTotalMines(game.getSize() * 3);
                 }
                 case "hard", "Hard" ->
                 {
                     difficultyNotSet = false;
-                    game.setTotalMines(game.size * 4);
+                    game.setTotalMines(game.getSize() * 4);
                 }
                 default -> System.out.println("Please enter easy, normal, or hard");
             }
         } while (difficultyNotSet);
 
-        for (int i = 0 ; i < game.size ; i++)
-        {
 
-        }
+
+
 
     }
 }

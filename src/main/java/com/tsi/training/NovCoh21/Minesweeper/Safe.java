@@ -1,6 +1,7 @@
 package com.tsi.training.NovCoh21.Minesweeper;
 
-public class Safe {
+public class Safe extends Space
+{
 
 
     ////////////////////////Attributes///////////////////
@@ -11,4 +12,10 @@ public class Safe {
 
 
     ///////////////////////Constructor//////////////////
+
+    public Safe(int xCoordinate, int yCoordinate)
+    {
+        super(xCoordinate, yCoordinate);
+        setIsSafe(true);
+    }
 }
