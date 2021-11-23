@@ -19,31 +19,30 @@ import java.util.Scanner;
 <span class="nc" id="L19">            System.out.println(&quot;What difficulty setting would you like? (easy/normal/hard)&quot;);</span>
 <span class="nc" id="L20">            game.setDifficulty(readDifficulty.nextLine());</span>
 
-<span class="nc bnc" id="L22" title="All 4 branches missed.">            switch (game.difficulty) {</span>
+<span class="nc bnc" id="L22" title="All 4 branches missed.">            switch (game.getDifficulty()) {</span>
                 case &quot;easy&quot;, &quot;Easy&quot; -&gt;
                 {
 <span class="nc" id="L25">                    difficultyNotSet = false;</span>
-<span class="nc" id="L26">                    game.setTotalMines(game.size);</span>
+<span class="nc" id="L26">                    game.setTotalMines(game.getSize());</span>
 <span class="nc" id="L27">                }</span>
                 case &quot;normal&quot;, &quot;Normal&quot; -&gt;
                 {
 <span class="nc" id="L30">                    difficultyNotSet = false;</span>
-<span class="nc" id="L31">                    game.setTotalMines(game.size * 3);</span>
+<span class="nc" id="L31">                    game.setTotalMines(game.getSize() * 3);</span>
 <span class="nc" id="L32">                }</span>
                 case &quot;hard&quot;, &quot;Hard&quot; -&gt;
                 {
 <span class="nc" id="L35">                    difficultyNotSet = false;</span>
-<span class="nc" id="L36">                    game.setTotalMines(game.size * 4);</span>
+<span class="nc" id="L36">                    game.setTotalMines(game.getSize() * 4);</span>
 <span class="nc" id="L37">                }</span>
 <span class="nc" id="L38">                default -&gt; System.out.println(&quot;Please enter easy, normal, or hard&quot;);</span>
             }
 <span class="nc bnc" id="L40" title="All 2 branches missed.">        } while (difficultyNotSet);</span>
 
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        for (int i = 0 ; i &lt; game.size ; i++)</span>
-        {
 
-        }
 
-<span class="nc" id="L47">    }</span>
+
+
+<span class="nc" id="L46">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
